@@ -5,12 +5,12 @@ Python 가상 환경(Python Virtual Environments)을 사용하여 Python 프로�
 ### 목차
 
 * [가상 환경이 필요한 이유?](#section-1)
-* What Is a Virtual Environment?
-* Using Virtual Environments
-* How Does a Virtual Environment Work?
-* Managing Virtual Environments With virtualenvwrapper
-* Using Different Versions of Python
-* Conclusion
+* [가상 환경이란?](#section-2)
+* [가상 환경 사용하기](#section-3)
+* [가상 환경은 어떻게 작동하는가?](#section-4)
+* [virtualenvwrapper으로 가상 환경 관리하기](#section-5)
+* [여러 버전의 Python 사용하기](#section-6)
+* [맺는 말](#section-7)
 
 ### <a name="section-1">가상 환경이 필요한 이유?</a>
 
@@ -53,7 +53,7 @@ site-packages 디렉토리에서 버전을 구분할 수 없기 때문에 Python
 
 이때 가상 환경과 [virtualenv](https://virtualenv.readthedocs.org/en/latest/)/[venv](https://docs.python.org/3/library/venv.html) 툴을 사용한다.
 
-### 가상 환경이란?
+### <a name="section-2">가상 환경이란?</a>
 
 기본적으로 Python 가상 환경의 주된 목적은 [Python project](https://realpython.com/intermediate-python-project-ideas/)를 위한 격리된 환경을 만드는 것이다. 즉, 다른 프로젝트가 갖는 종속성과 상관없이 각 프로젝트마다 자신의 종속성을 가질 수 있다.
 
@@ -63,7 +63,7 @@ The great thing about this is that there are no limits to the number of environm
 
 이는 몇 개의 스크립트로 구성된 디렉토리에 불과하므로 환경 수에 제한이 없다는 것이 가장 큰 장점이다. 더우기 가상 <code>virtualenv</code> 또는 <code>[pyenv](https://realpython.com/intro-to-pyenv/)</code> 명령어 도구를 사용하여 쉽게 만들 수 있다.
 
-### 가상 환경 사용하기
+### <a name="section-3">가상 환경 사용하기</a>
 
 To get started, if you’re not using Python 3, you’ll want to install the virtualenv tool with pip:
 
@@ -185,7 +185,7 @@ ImportError: No module named 'bcrypt'
 
 먼저 환경에서는 <code>bcrypt</code>를 제공했고, 그 다음에서는 그렇지 않았다. 이것이 가상 환경이 추구하는 격리이며, 이를 쉽게 달성할 수 있다.
 
-### 가상 환경은 어떻게 작동하는가?
+### <a name="section-4">가상 환경은 어떻게 작동하는가?</a>
 
 환경을 "활성화"한다는 것이 정확히 무엇을 의미할까? 특히 실행 환경, 종속성 해결 등을 이해하는 것은 개발자에게 어떤 일이 일어나고 있는지 파악하는 것으로 매우 중요하다.
 
@@ -236,7 +236,7 @@ In our example, the binary is located at /Users/michaelherman/python-virtual-env
 
 예에서 바이너리는 <code>/Users/michaelherman/python-virtual-environments/env/bin</code>에 있다. 즉, <code>sys.prefix</code>는 <code>/Users/michaelherman/python-virtual-environments/env</code>가 되고, <code>/Users/michaelherman/python-virtual-environments/env/lib/pythonX.X/site-packages</code>가 사용되는 site-packages 디렉토리이다. 마지막으로 패키지가 상주할 수 있는 모든 위치를 갖고 있는 <code>sys.path</code> 배열에 이 경로를 저장한다.
 
-### virtualenvwrapper으로 가상 환경 관리하기
+### <a name="section-5">virtualenvwrapper으로 가상 환경 관리하기</a>
 
 가상 환경은 패키지 관리와 관련된 몇 가지 큰 문제를 해결하였지만 완벽하지 않다. 몇 가지 환경을 만들고 나면 이러한 환경 자체에서 문제를 일으키기 시작 한다. 대부분 환경 관리를 중심으로 해결할 수 있다. 이를 위해 virtualenvwrapper 도구를 생성하였다. 이는 기본 가상 환경 도구를 둘러싸고 있는 래퍼 스크립트 일부일 뿐이다.
 
@@ -342,7 +342,7 @@ $ virtualenv -p $(which python3) blog_virtualenv
 
 이제 환경을 어디에 설치했는지 기억하지 않아도 된다. 원하는 대로 쉽게 삭제하거나 복사할 수 있으며 프로젝트 디렉토리가 휠씬 깔끔해질 것이다!
 
-### 여러 버전의 Python 사용하기
+### <a name="section-6">여러 버전의 Python 사용하기</a>
 
 과거 <code>virtualenv</code> 도구와 달리, <code>pyvenv</code>는 임의 버전 Python을 사용하여 환경을 만드는 것을 지원하지 않는다. 즉, 사용자가 생성하는 모든 환경에서 기본 Python 3 설치를 사용해야 하는 것을 의미한다. (--upgrade 옵션을 통해) 환경을 최신 시스템 버전의 Python으로 업그레이드할 수 있지만, 이 경우 특정 버전을 지정할 수 없다.
 
@@ -421,7 +421,7 @@ Using version: 2.7.11
 
 이는 여러 버전으로 다양한 프로젝트를 수행하는 개발자에게 매우 강력할 수 있다. 글로벌을 통해 모든 프로젝트의 기본 버전을 쉽게 변경할 수 있을 뿐만 아니라 이를 재정의하여 특수한 경우를 지정할 수도 있기 때문이다.
 
-### 맺는 말
+### <a name="section-7">맺는 말</a>
 
 이 글에서는 Python 종속성을 저장하고 푸는 방법뿐만 아니라 다양한 패키징 및 버저닝 문제 해결에 도움이 되는 다양한 커뮤니티 도구 사용 방법에 대해 배웠다.
 
