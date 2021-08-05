@@ -4,7 +4,7 @@ Python 가상 환경(Python Virtual Environments)을 사용하여 Python 프로�
 
 ### 목차
 
-* Why the Need for Virtual Environments?
+* [가상 환경이 필요한 이유?](#sectiomn-1)
 * What Is a Virtual Environment?
 * Using Virtual Environments
 * How Does a Virtual Environment Work?
@@ -12,7 +12,7 @@ Python 가상 환경(Python Virtual Environments)을 사용하여 Python 프로�
 * Using Different Versions of Python
 * Conclusion
 
-### 가상 환경이 필요한 이유?
+### 가상 환경이 필요한 이유? {#section-1}
 
 최근 대부분 프로그래밍 언어처럼 Python 또한 고유한 방법으로 패키지(또는 모듈)를 다운로드하고 저장하여 사용하고 있다. 이 방법에는 장점이 있지만 패키지 저장과 사용에 대해 몇 가지 흥미로운 방법을 채택하고 있으며, 이로 인해 패키지를 저장하는 방법 및 위치와 같은 문제들이 발생했다.
 
