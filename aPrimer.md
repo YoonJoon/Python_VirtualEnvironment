@@ -4,7 +4,7 @@ Python 가상 환경(Python Virtual Environments)을 사용하여 Python 프로�
 
 ### 목차
 
-* [가상 환경이 필요한 이유?](#sectiomn-1)
+* [가상 환경이 필요한 이유?](#section-1)
 * What Is a Virtual Environment?
 * Using Virtual Environments
 * How Does a Virtual Environment Work?
